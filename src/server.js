@@ -47,7 +47,7 @@ async function route(req,res){
     }catch(e){return send(res,e.status||500,{error:e.code||'INTERNAL_ERROR',message:e.status?e.message:'Internal demo error'});}
   }
   if(req.method!=='GET')return send(res,405,'Method Not Allowed','text/plain');
-  const assets={'/':'index.html','/index.html':'index.html','/app.js':'app.js','/styles.css':'styles.css','/favicon.svg':'favicon.svg'};
+  const assets={'/':'index.html','/index.html':'index.html','/app.js':'app.js','/styles.css':'styles.css','/favicon.svg':'favicon.svg','/review.html':'review.html','/review.js':'review.js','/review.css':'review.css'};
   const filename=assets[pathname];
   if(!filename)return send(res,404,'Not Found','text/plain');
   fs.readFile(path.join(root,filename),(err,data)=>{

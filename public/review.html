@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="CommonsGate synthetic-data governance review worksheet. No responses are transmitted or saved by the server.">
+  <title>CommonsGate — Governance review</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/review.css">
+  <script defer src="/review.js"></script>
+</head>
+<body>
+  <div class="shell">
+    <header class="bar">
+      <a href="/" class="brand" aria-label="CommonsGate policy lab">commons<strong>gate</strong></a>
+      <span class="pill">V0.2 · LOCAL REVIEW KIT</span>
+    </header>
+    <main>
+      <div class="eyebrow">INDEPENDENT RESEARCH PROTOTYPE · SYNTHETIC DATA ONLY</div>
+      <h1>Can people understand and challenge the rules?</h1>
+      <p class="intro">This worksheet helps a facilitator discuss the existing <strong>allow / community veto / withdrawal</strong> demonstrations. It does not validate community needs by itself, and no real clinical information is involved.</p>
+      <section class="notice" aria-label="Privacy and review safeguards">
+        <h2>Before you begin</h2>
+        <p>Participation should be voluntary. Do not enter names, contact details, health experiences, or any personal information. This form only accepts predefined choices. Nothing is transmitted, collected by the server, or stored in this browser. <strong>Export</strong> creates a JSON file on your computer; keep that file private and share only appropriate summaries.</p>
+        <p>This is an exploratory review aid, not approved human-subject research, clinical evaluation, or evidence of SRHIN endorsement.</p>
+      </section>
+      <section aria-labelledby="walkthrough">
+        <h2 id="walkthrough">1. Watch the three scenarios</h2>
+        <ol class="steps">
+          <li><strong>Allow:</strong> check that both community reviews, individual permissions, policy, and steward check pass.</li>
+          <li><strong>Deny:</strong> observe one reviewer's veto blocking access despite other approvals.</li>
+          <li><strong>Revoke:</strong> observe an access token working first, then failing after a fictional participant withdraws permission.</li>
+        </ol>
+        <a class="action" href="/">Open the synthetic decision lab <span aria-hidden="true">↗</span></a>
+        <p class="muted">The review remains unsubmitted while you switch tabs. Return here to complete it after trying the lab.</p>
+      </section>
+      <section aria-labelledby="feedback">
+        <h2 id="feedback">2. Complete an optional review</h2>
+        <p class="muted">Choose one answer per question. These are comprehension and usability signals, not evidence that a community has endorsed a governance model.</p>
+        <form id="review-form">
+          <fieldset><legend>After an individual withdraws permission, what can CommonsGate demonstrate?</legend>
+            <label for="withdrawal">Choose the best description</label>
+            <select id="withdrawal" name="withdrawal" required>
+              <option value="">Choose one</option>
+              <option value="future-only">It can block later access through this gateway, not undo past AI training or disclosure</option>
+              <option value="erase-past">It automatically erases earlier research and trained AI models</option>
+              <option value="no-effect">Withdrawal does not affect access</option>
+              <option value="unsure">Not sure</option>
+            </select>
+          </fieldset>
+          <fieldset><legend>In the demonstration, can one authorised community reviewer veto a request?</legend>
+            <label for="veto">Choose one</label>
+            <select id="veto" name="veto" required>
+              <option value="">Choose one</option>
+              <option value="yes">Yes, under the simulated review rule</option>
+              <option value="no">No, the data steward always overrides them</option>
+              <option value="unsure">Not sure</option>
+            </select>
+          </fieldset>
+          <fieldset><legend>How clear was the distinction between allow, deny, and revoke?</legend>
+            <label for="clarity">1 = unclear; 5 = very clear</label>
+            <select id="clarity" name="clarity" required>
+              <option value="">Choose 1–5</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option>
+            </select>
+          </fieldset>
+          <fieldset><legend>How clearly did the demonstration show who holds decision-making power?</legend>
+            <label for="agency">1 = unclear; 5 = very clear</label>
+            <select id="agency" name="agency" required>
+              <option value="">Choose 1–5</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option>
+            </select>
+          </fieldset>
+          <fieldset><legend>How useful is this demonstration for discussing community data governance?</legend>
+            <label for="usefulness">1 = not useful; 5 = very useful</label>
+            <select id="usefulness" name="usefulness" required>
+              <option value="">Choose 1–5</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option>
+            </select>
+          </fieldset>
+          <fieldset><legend>Which issue deserves the most discussion before building a real system?</legend>
+            <label for="priority">Choose one priority</label>
+            <select id="priority" name="priority" required>
+              <option value="">Choose one</option>
+              <option value="representation">Who legitimately represents the community</option>
+              <option value="consent">How people understand or withdraw permission</option>
+              <option value="review-rules">How decisions, vetoes, and appeals should work</option>
+              <option value="benefits">How community benefits are decided and verified</option>
+              <option value="security">Security, privacy, and data access boundaries</option>
+              <option value="accessibility">Languages, low-bandwidth access, and accessibility</option>
+              <option value="unsure">Not sure</option>
+            </select>
+          </fieldset>
+          <div class="actions">
+            <button type="submit" class="action">Export review as JSON <span aria-hidden="true">↓</span></button>
+            <button type="reset" class="secondary">Clear answers</button>
+          </div>
+          <p id="review-status" role="status" aria-live="polite" class="muted">No answers have been exported or sent anywhere.</p>
+        </form>
+      </section>
+      <section class="closing"><h2>3. Facilitate the discussion</h2>
+        <p>Ask what is missing from the simulated rules, who should be able to appeal, and whose interests might not be represented. Do not assume this prototype defines the right governance model. See <a href="https://github.com/realxpen/commonsgate/blob/main/docs/validation/EVALUATION_PROTOCOL.md">the evaluation protocol</a> for a safe, exploratory review approach.</p>
+      </section>
+      <footer><span>CommonsGate · v0.2 exploratory review kit</span><a href="/">Return to demo</a></footer>
+    </main>
+  </div>
+</body>
+</html>

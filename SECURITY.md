@@ -30,3 +30,7 @@ Obtain community-led requirements and ethics/legal advice; add robust user authe
 ## Reporting vulnerabilities
 
 Do not include patient data, secrets or sensitive materials in a public issue. If an issue concerns this synthetic demo, open a GitHub issue with a minimal reproduction using fictional data. For sensitive findings, contact the repository maintainer privately through GitHub rather than posting a public exploit.
+
+## Version 0.2 review worksheet
+
+The local review worksheet accepts predefined responses and can export an on-device JSON file. It provides **no API submission, database storage, analytics, browser storage, or identifying fields**. Exported files may still be sensitive in small groups; do not commit them, upload them to issues, or publicly release respondent-level results. No external field study or host endorsement is implied. The API stays on 127.0.0.1 and must not be publicly deployed.

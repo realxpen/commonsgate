@@ -1,4 +1,4 @@
-# CommonsGate — Community-governed AI data-access lab (v0.1)
+# CommonsGate — Community-governed AI data-access lab (v0.2)
 
 **A working, dependency-free local proof of concept:** community governance and an individual's permission can prevent access to a fabricated research dataset. The local web interface runs three real API-driven scenarios: **allow**, **deny by community veto**, and **revoke after individual withdrawal**.
 
@@ -7,6 +7,17 @@
 ![CommonsGate local demo, fictional data](assets/CommonsGate_POC_Preview.png)
 
 **Quick links:** [Reviewer guide](docs/REVIEWER_GUIDE.md) · [Two-minute demo](docs/DEMO_SCRIPT.md) · [Security limitations](SECURITY.md) · [Architecture](docs/ARCHITECTURE.md) · [Contributing](CONTRIBUTING.md)
+
+## v0.2: governance validation kit (not yet field-validated)
+
+Alongside the existing local allow / veto / revoke lab, version 0.2 adds a **review worksheet** at **http://127.0.0.1:4173/review.html**. A reviewer can run the fictional scenarios, answer structured comprehension/usability questions, and export a JSON file **on their own computer**. No feedback is posted to an API, retained in a database, or stored in browser storage.
+
+- [Exploratory evaluation protocol](docs/validation/EVALUATION_PROTOCOL.md)
+- [Facilitator guide](docs/validation/FACILITATOR_GUIDE.md)
+- [Aggregate feedback template](docs/validation/FEEDBACK_SUMMARY_TEMPLATE.md)
+- [Two-minute demo recording plan](docs/validation/TWO_MINUTE_DEMO.md)
+
+**No external reviewers, real community participation, partnership endorsement, or video recording are claimed.** Facilitated community research must wait for appropriate consent, safeguards, partner involvement and approvals. Never publish raw feedback files or health information.
 
 ## Run it locally
 
@@ -18,7 +29,7 @@ npm start
 
 Open **http://127.0.0.1:4173** on the same computer. Select a scenario and click **Run scenario**. You can run a different scenario immediately; each run resets the fictional data.
 
-To run the tests (20 automated checks in this release):
+To run the tests (22 automated checks in this release):
 
 ```bash
 npm test
