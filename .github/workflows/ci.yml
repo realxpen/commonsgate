@@ -1,0 +1,21 @@
+name: CI — synthetic demo checks
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [20, 22, 24]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Validate JavaScript
+        run: npm run check
+      - name: Run deterministic unit and HTTP tests
+        run: npm test

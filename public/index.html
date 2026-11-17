@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#f6f8f6">
+  <meta name="description" content="CommonsGate: an interactive simulation of community-governed permissions for fictional research data.">
+  <title>CommonsGate — Policy lab</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/styles.css">
+  <script defer src="/app.js"></script>
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <div class="brand"><span class="brandmark" aria-hidden="true"><span></span><span></span><span></span><span></span></span><span>commons<span class="brand-strong">gate</span><small>RESEARCH PROTOTYPE</small></span></div>
+      <div class="header-right"><span class="status-indicator"><span class="status-dot"></span> Local engine</span><span class="demo-label">100% synthetic data</span><a class="navlink" href="#about">About <span aria-hidden="true">↗</span></a></div>
+    </header>
+    <main>
+      <section class="hero">
+        <div class="hero-left"><div class="eyebrow"><span class="tiny-circle"></span> INTERACTIVE PROOF OF CONCEPT <span class="eyebrow-sep">/</span> VERSION 0.1</div>
+          <h1>Data access should be <em>earned,</em><br> not assumed.</h1>
+          <p>See how individual permissions, community decisions, and steward reviews work together to allow, deny, or revoke access to research data.</p>
+          <div class="hero-meta"><span>◈ Governed together</span><span>↗ Enforced by code</span><span>⊙ Auditable decisions</span></div>
+        </div>
+        <div class="hero-aside"><div class="aside-label">THE CORE PRINCIPLE</div><p>No single approval can override a person's rights.</p><div class="aside-bottom"><span>Individual agency</span><span class="aside-plus">+</span><span>Collective authority</span></div></div>
+      </section>
+      <section class="metric-strip" aria-label="Synthetic fixture counts">
+        <div><strong id="metric-participants">24</strong><span>Fictional participants</span></div>
+        <div><strong id="metric-communities">02</strong><span>Invented communities</span></div>
+        <div><strong id="metric-datasets">03</strong><span>Mock datasets</span></div>
+        <div><strong id="metric-policies">04</strong><span>Simulated policies</span></div>
+        <div><strong id="metric-requests">06</strong><span>Research requests</span></div>
+      </section>
+      <section class="section-heading" id="lab"><div><span class="section-index">01 / EXPLORE</span><h2>Test the decision engine</h2><p>Select a scenario. Every run starts with fresh fictional data and makes actual requests to the local policy engine.</p></div><button id="reset-btn" class="secondary-button" type="button">↶ &nbsp; Reset lab</button></section>
+      <div class="scenarios" role="group" aria-label="Select a test scenario">
+        <button type="button" class="scenario-card active" data-scenario="allow" aria-pressed="true"><span class="scenario-number">SCENARIO 01 <span class="scenario-icon allowed">✓</span></span><strong>Access approved</strong><span class="scenario-desc">All parties agree. The gateway releases a safe, fictional aggregate.</span><span class="scenario-action">Explore scenario <span>↗</span></span></button>
+        <button type="button" class="scenario-card" data-scenario="deny" aria-pressed="false"><span class="scenario-number">SCENARIO 02 <span class="scenario-icon denied">×</span></span><strong>Community veto</strong><span class="scenario-desc">One reviewer rejects a use. The request cannot proceed.</span><span class="scenario-action">Explore scenario <span>↗</span></span></button>
+        <button type="button" class="scenario-card" data-scenario="revoke" aria-pressed="false"><span class="scenario-number">SCENARIO 03 <span class="scenario-icon revoked">↺</span></span><strong>Permission withdrawn</strong><span class="scenario-desc">A participant withdraws consent. A previously valid grant stops working.</span><span class="scenario-action">Explore scenario <span>↗</span></span></button>
+      </div>
+      <section class="workspace">
+        <article class="workflow-card">
+          <div class="card-top"><div><span class="section-index">POLICY EVALUATION</span><h3 id="scenario-title">Access approved</h3></div><div class="request-code">REQUEST <strong>R-001</strong></div></div>
+          <p class="workflow-summary" id="scenario-description">Two community approvals, individual permissions, and a data-steward check must all pass.</p>
+          <div class="dataset-row"><div><span class="field-label">DATASET</span><strong>Community Wellbeing Survey A</strong></div><div><span class="field-label">PURPOSE</span><strong>Academic analysis</strong></div><div><span class="field-label">RECORDS</span><strong>8 fictional</strong></div></div>
+          <h4>Required checkpoints <span id="checkpoint-count">0 / 4 passing</span></h4>
+          <div class="checklist" id="checklist" aria-live="polite">
+            <div class="check-row"><span class="check-icon idle">·</span><span><strong>Community policy</strong><small>Use must be permitted</small></span><span class="check-state">Awaiting run</span></div>
+            <div class="check-row"><span class="check-icon idle">·</span><span><strong>Community review</strong><small>Two simulated reviewer approvals</small></span><span class="check-state">Awaiting run</span></div>
+            <div class="check-row"><span class="check-icon idle">·</span><span><strong>Individual permissions</strong><small>Every included participant has permission</small></span><span class="check-state">Awaiting run</span></div>
+            <div class="check-row"><span class="check-icon idle">·</span><span><strong>Data steward review</strong><small>Ethics prerequisites and scope checked</small></span><span class="check-state">Awaiting run</span></div>
+          </div>
+          <div class="run-panel"><div><span class="run-caption">RUN THE SIMULATION</span><span class="run-copy" id="run-copy">See whether a request receives a valid access grant.</span></div><button type="button" id="run-btn" class="primary-button">Run scenario <span aria-hidden="true">→</span></button></div>
+        </article>
+        <aside class="result-panel" aria-live="polite">
+          <div class="result-heading"><span class="section-index">GATEWAY DECISION</span><span class="result-label">LIVE RESULT</span></div>
+          <div class="big-symbol" id="result-symbol">◌</div>
+          <span class="result-caption" id="result-caption">Awaiting evaluation</span>
+          <h3 id="result-title">No decision yet</h3>
+          <p id="result-description">Choose a scenario and run it to see the access gateway enforce its rules.</p>
+          <div class="decision-divider"></div>
+          <div class="result-detail"><span>Access status</span><strong id="result-access">NOT EVALUATED</strong></div>
+          <div class="result-detail"><span>Grant status</span><strong id="result-grant">NOT ISSUED</strong></div>
+          <div class="result-detail"><span>Receipt integrity</span><strong id="result-chain">—</strong></div>
+          <div class="last-reason" id="last-reason">No policy decisions recorded.</div>
+        </aside>
+      </section>
+      <section class="audit-grid">
+        <article class="timeline-card"><div class="card-top"><div><span class="section-index">02 / TRACE</span><h3>What happened, step by step</h3></div><span id="trace-count" class="trace-number">0 EVENTS</span></div><div id="trace" class="trace empty-trace"><p>Run a scenario to see the real decision path, from review to gateway access.</p></div></article>
+        <article class="receipt-card"><div class="card-top"><div><span class="section-index">03 / ACCOUNTABILITY</span><h3>Decision receipt</h3></div><button id="copy-receipt" class="text-button" type="button" disabled>Copy JSON ↗</button></div>
+          <div class="receipt-placeholder" id="receipt-placeholder"><span>⌁</span><p>A reason-coded, hash-linked receipt will appear here after evaluation.</p></div>
+          <dl class="receipt-details hidden" id="receipt-details"><dt>DECISION</dt><dd id="receipt-decision">—</dd><dt>REASON CODE</dt><dd id="receipt-reason">—</dd><dt>TIMESTAMP</dt><dd id="receipt-timestamp">—</dd><dt>RECEIPT HASH</dt><dd id="receipt-hash" class="mono">—</dd><dt>PREVIOUS HASH</dt><dd id="receipt-prev" class="mono">—</dd></dl>
+          <div class="receipt-footer">SHA-256 hash-chain for demonstration. Tamper-evident within the demo, not a persistent or tamper-proof audit ledger.</div>
+        </article>
+      </section>
+      <section id="about" class="about"><div><span class="section-index">04 / INTENT & BOUNDARIES</span><h2>Built to test an idea.<br><em>Not to make decisions for people.</em></h2></div><div class="about-right"><p>CommonsGate explores one question: can collective decisions and individual rights actually control technical access, instead of living only in policy documents?</p><div class="boundary-grid"><div><span>✓</span><strong>Inside the demo</strong><small>Invented participants, scripted review decisions, scoped tokens, fictional aggregates, reason-coded receipts.</small></div><div><span>×</span><strong>Outside the demo</strong><small>Real health records, patients, clinical advice, legal approval, live payments, SRHIN integration, real authentication.</small></div></div><p class="disclaimer">Independent exploratory concept for the Mozilla Fellowship. Not affiliated with or endorsed by Mozilla Foundation or Slum & Rural Health Initiative.</p></div></section>
+      <footer><span class="footer-mark">◈ &nbsp; CommonsGate</span><span>Local research prototype · Fictional data only</span><a href="#lab">Back to the lab ↑</a></footer>
+    </main>
+  </div>
+</body>
+</html>
