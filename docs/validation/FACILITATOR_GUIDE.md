@@ -3,8 +3,8 @@
 Use this only with a voluntary reviewer who understands the synthetic-data boundary. It is a **conversation guide**, not a research consent form or a substitute for an approved protocol.
 
 ## Before the call
-- Run \`npm start\`; verify \`npm test\` and \`npm run check\`.
-- Open \`http://127.0.0.1:4173/\` and \`http://127.0.0.1:4173/review.html\`.
+- Run `npm start`; verify `npm test` and `npm run check`.
+- Open `http://127.0.0.1:4173/` and `http://127.0.0.1:4173/review.html`.
 - Keep the local server on loopback. Do not host it on a shared internet server.
 - Never request real clinical cases, health histories, names, or identifiable participant stories.
 - Say explicitly: no relationship with Mozilla or SRHIN is being claimed.

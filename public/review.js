@@ -31,7 +31,7 @@ form.addEventListener('submit', event => {
   document.body.append(link);
   link.click();
   link.remove();
-  URL.revokeObjectURL(url);
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
   status.textContent = 'A JSON file was generated on this device. No response was sent to CommonsGate.';
 });
 form.addEventListener('reset', () => {

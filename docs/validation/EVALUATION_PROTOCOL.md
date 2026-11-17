@@ -39,7 +39,7 @@ Continue refining only if reviewers understand the scope and an actual host/comm
 ## Files and handling
 
 - Open the review on the same localhost machine as the lab: http://127.0.0.1:4173/review.html
-- Export is initiated by the reviewer; it downloads \`commonsgate-review.json\` on that device.
+- Export is initiated by the reviewer; it downloads `commonsgate-review.json` on that device.
 - Export has no names, email addresses, respondent IDs or timestamps. It is still potentially sensitive in a small group: keep it private and use only aggregated results with permission.
 - The prototype does not upload or save responses. Avoid putting raw review files in the public GitHub repository, chat, issue comments, or presentations.
 - The facilitator should prepare an aggregate-only summary using FEEDBACK_SUMMARY_TEMPLATE.md. Do not imply representativeness or a generalisable sample.

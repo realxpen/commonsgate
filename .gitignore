@@ -17,3 +17,7 @@ tmp/
 *.sqlite3
 *.db
 .private/
+
+# Local governance-review exports (never commit respondent-level feedback)
+commonsgate-review*.json
+review-exports/
